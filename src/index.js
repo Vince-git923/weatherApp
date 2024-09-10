@@ -6,8 +6,12 @@ import "./style.css"
 
 
 
+
+
 let content = document.querySelector('.CONTENT')
 
+import cloudy from `../assets/cloudy.png`
+content.style.backgroundImage = `url(${cloudy})`
 
 
 
