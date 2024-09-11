@@ -230,7 +230,7 @@ for(let i = 1; i <= 7; i++){
   
   
   dateDiv.textContent = date + ` (${days[hehe.getDay()]})`;
-  iconDiv.style.backgroundImage = `url('../assets/${icon}.png')`
+  setIcon(icon, iconDiv)
   tempDiv.textContent = temp;
   des.textContent = "Chance of Rain"
   chanceVal.textContent = chance;
