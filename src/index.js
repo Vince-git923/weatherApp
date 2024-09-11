@@ -5,13 +5,48 @@ import "./style.css"
 
 
 
+import cloudy from "../assets/cloudy.png";
+import fog from "../assets/fog.png";
+import clearDay from "../assets/clear-day.png";
+import clearNight from "../assets/clear-night.png";
+import partlyCloudyDay from "../assets/partly-cloudy-day.png";
+import partlyCloudNight from "../assets/partly-cloudy-night.png";
+import rain from "../assets/rain.png";
+import snow from "../assets/snow.png";
+import wind from "../assets/wind.png";
+
+
+
+
+
+
+const array = [{'name': "fog",
+                "val" :`url("${fog}")`},
+                {'name': "cloudy",
+                    "val" :`url("${cloudy}")`},
+                {'name': "clear-day",
+                "val" :`url("${clearDay}")`},
+                {'name': "clear-night",
+                    "val" :`url("${clearNight}")`},
+                {'name': "partly-cloudy-day",
+                    "val" :`url("${partlyCloudyDay}")`},
+                {'name': "parlty-cloudy-night",
+                    "val" :`url("${partlyCloudNight}")`},
+                {'name': "rain",
+                    "val" :`url("${rain}")`},
+                {'name': "snow",
+                    "val" :`url("${snow}")`},
+                {'name': "wind",
+                    "val" :`url("${wind}")`},
+
+            ]
+
+
 
 
 
 let content = document.querySelector('.CONTENT')
 
-import cloudy from `../assets/cloudy.png`
-content.style.backgroundImage = `url(${cloudy})`
 
 
 
@@ -88,7 +123,8 @@ sunset.textContent = resData.currentConditions.sunset
 
 let iconVal = resData.currentConditions.icon
 
-setIcon(iconVal);
+setIcon(iconVal,currentIcon);
+
 
 
 for(let i = hournow + 1; i <= 23; i++){
@@ -120,7 +156,7 @@ for(let i = hournow + 1; i <= 23; i++){
     hTemp.textContent = convert(resData.days[0].hours[i].temp )+ '°C';
 
 
-    hIcon.style.backgroundImage = `url('../assets/${val}.png')`
+   setIcon(val,hIcon)
 
     perHourDiv.appendChild(hTime)
     perHourDiv.appendChild(hIcon);
@@ -159,7 +195,7 @@ for(let i = hournow + 1; i <= 23; i++){
     hTemp.textContent = convert(resData.days[1].hours[i].temp )+ '°C';
 
     
-    hIcon.style.backgroundImage = `url('../assets/${val}.png')`
+    setIcon(val,hIcon)
     perHourDiv.appendChild(hTime)
     perHourDiv.appendChild(hIcon);
     perHourDiv.appendChild(hTemp)
@@ -296,10 +332,15 @@ function convert(value){
 
 
 
-function setIcon(val){
+function setIcon(val, param){
 
    
-            currentIcon.style.backgroundImage = `url('../assets/${val}.png')`
+    array.forEach(el=>{
+        if(el.name == val){
+            param.style.backgroundImage = el.val
+        }
+    })
+            
     
 }
 

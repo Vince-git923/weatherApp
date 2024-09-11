@@ -5,10 +5,32 @@
 
 
 
+.tempIcon{
+    background-image: url("../assets/temparature.png");
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
+.lowarrow,.higharrow{
+    height: 10px;
+    width: 10px;
 
+}
 
+.lowarrow{
+    background-image: url("../assets/low.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.higharrow{
+    background-image: url("../assets/high.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 
 .icon{
@@ -17,11 +39,8 @@
     background-image: url('../assets/cloudy.png');
     background-size: cover;
     background-position: center;
-}.temp-icon{
-    width: 40px;
-    height: 40px;
-   
-}.hourly-icon,.future-icon{
+}
+.hourly-icon,.future-icon{
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -33,7 +52,7 @@
    
     height: 60px;
 }.temp-text{
-    font-size: 35px;
+    font-size: 32px;
 }.fl{
     display: flex;
     gap:10px
