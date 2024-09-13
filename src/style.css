@@ -357,6 +357,12 @@ header{
   }
 }
 
+@media screen and (max-width: 360px){
+    .main-details{
+        font-size: 12px;
+    }
+}
+
 
 @media(hover:hover){
     .searchBtn:hover{

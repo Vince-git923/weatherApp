@@ -30,7 +30,7 @@ const array = [{'name': "fog",
                     "val" :`url("${clearNight}")`},
                 {'name': "partly-cloudy-day",
                     "val" :`url("${partlyCloudyDay}")`},
-                {'name': "parlty-cloudy-night",
+                {'name': "partly-cloudy-night",
                     "val" :`url("${partlyCloudNight}")`},
                 {'name': "rain",
                     "val" :`url("${rain}")`},
@@ -91,6 +91,7 @@ async function test(loc){
 
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${loc}?key=8QKWVAKQRP4RHTFMCUX6BWHND
 `,{mode:'cors'})
+
 
 
    if(! response.ok){
